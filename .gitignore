@@ -72,3 +72,16 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+BuildingEscape/Content/StarterContent/Textures
+BuildingEscape/Content/StarterContent/HDRI
+BuildingEscape/Content/StarterContent/Audio
+BuildingEscape/Content/StarterContent/Maps
+
+BuildingEscape/.vs/BuildingEscape/v17/Solution.VC.db-wal
+
+*/Build
+*/Binaries
+*/Intermediate
+*/DerivedDataCache
+*/Saved
