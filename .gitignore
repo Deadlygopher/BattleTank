@@ -73,10 +73,11 @@ Plugins/*/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
-BuildingEscape/Content/StarterContent/Textures
-BuildingEscape/Content/StarterContent/HDRI
-BuildingEscape/Content/StarterContent/Audio
-BuildingEscape/Content/StarterContent/Maps
+BattleTank/Content/StarterContent/Textures
+BattleTank/Content/StarterContent/HDRI
+BattleTank/Content/StarterContent/Audio
+BattleTank/Content/StarterContent/Maps
+BattleTank/Content/StarterContent/Particles
 
 BuildingEscape/.vs/BuildingEscape/v17/Solution.VC.db-wal
 
@@ -85,3 +86,4 @@ BuildingEscape/.vs/BuildingEscape/v17/Solution.VC.db-wal
 */Intermediate
 */DerivedDataCache
 */Saved
+
