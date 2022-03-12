@@ -14,9 +14,24 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 
 private:
+
 	ATank* GetControlledTank() const;
+
+	//Перемещает ствол танка вместе с перекрестием прицела
+	void AimTowardsCrosshair();
+	
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
+
+	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection)const;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairXLocation = 0.5;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairYLocation = 0.3333;
 
 public:	
 
-	void BeginPlay() override;
+	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 };
