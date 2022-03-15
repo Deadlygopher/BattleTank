@@ -6,6 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "TankAimingComponent.generated.h"
 
+class UTankTurret;
 class UTankBarrel;
 
 //Hold Barrel's parameters
@@ -23,8 +24,13 @@ public:
 	//TODO Set Turret Reference
 
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
+
+	void SetTurretReference(UTankTurret* TurretToSet);
 		
 private:
+
+	UTankTurret* Turret = nullptr;
+
 	UTankBarrel* Barrel = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);
