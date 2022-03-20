@@ -26,7 +26,7 @@ public:
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
 	void SetTurretReference(UTankTurret* TurretToSet);
-		
+
 private:
 
 	UTankTurret* Turret = nullptr;

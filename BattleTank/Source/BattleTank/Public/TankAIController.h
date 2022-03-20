@@ -18,6 +18,7 @@ class BATTLETANK_API ATankAIController : public AAIController
 
 private:
 
+	float AcceptanceRadius = 30;
 	//void AimToPlayer();
 
 public:
