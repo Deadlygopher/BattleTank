@@ -10,7 +10,6 @@
 class UTankTurret;
 class UTankBarrel;
 class UTankAimingComponent;
-class UTankMovementComponent;
 class AProjectile;
 
 UCLASS()
@@ -24,15 +23,6 @@ public:
 
 	void AimAt(FVector HitLocation);
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	UFUNCTION(BlueprintCallable, Category = "Setup")
-	void SetBarrelReference(UTankBarrel* BarrelToSet);
-
-	UFUNCTION(BlueprintCallable, Category = "Setup")
-	void SetTurretReference(UTankTurret* TurretToSet);
-
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 	void Fire();
 
@@ -41,10 +31,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UTankAimingComponent* TankAimingComponent = nullptr;
-
 	UPROPERTY(BlueprintReadOnly)
-	UTankMovementComponent* TankMovementComponent = nullptr;
+	UTankAimingComponent* TankAimingComponent = nullptr;
 
 private:
 
