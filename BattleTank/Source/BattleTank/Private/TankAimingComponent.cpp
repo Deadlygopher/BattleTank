@@ -78,11 +78,6 @@ void UTankAimingComponent::AimAt(FVector HitLocation)
 		//auto Time = GetWorld()->GetTimeSeconds();
 		//UE_LOG(LogTemp, Warning, TEXT("%f: Solve found"), Time)
 	}
-	else
-	{
-		auto Time = GetWorld()->GetTimeSeconds();
-		UE_LOG(LogTemp, Warning, TEXT("%f: No aim solve found"), Time)
-	}
 }
 
 void UTankAimingComponent::MoveBarrelTowards()
@@ -92,8 +87,16 @@ void UTankAimingComponent::MoveBarrelTowards()
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
+
 	Barrel->Elevate(DeltaRotator.Pitch);
-	Turret->Rotate(DeltaRotator.Yaw);
+	if (FMath::Abs(DeltaRotator.Yaw) > 180)
+	{
+		Turret->Rotate(-DeltaRotator.Yaw);
+	}
+	else 
+	{ 
+		Turret->Rotate(DeltaRotator.Yaw); 
+	}
 }
 
 void UTankAimingComponent::Fire()
@@ -108,4 +111,9 @@ void UTankAimingComponent::Fire()
 		Projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
 	}
+}
+
+EFiringState UTankAimingComponent::GetFiringState() const
+{
+	return FiringState;
 }

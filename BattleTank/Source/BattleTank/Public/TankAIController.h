@@ -14,9 +14,10 @@ class BATTLETANK_API ATankAIController : public AAIController
 {
 	GENERATED_BODY()
 
-private:
+protected:
 
-	float AcceptanceRadius = 30;
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	float AcceptanceRadius = 5000;
 	//void AimToPlayer();
 
 public:
