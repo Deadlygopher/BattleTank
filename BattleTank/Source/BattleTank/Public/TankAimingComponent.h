@@ -65,14 +65,14 @@ private:
 
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	virtual void BeginPlay()override;
+	void BeginPlay()override;
 
 	UPROPERTY(EditAnywhere, Category = "Firing")
 	int RoundsLeft = 3;
 
 protected:
 
-	UPROPERTY(EditAnywhere, Category = "Firing")
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	TSubclassOf <AProjectile> ProjectileBlueprint;
 
 	UPROPERTY(BlueprintReadOnly, Category = "State")
