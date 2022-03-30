@@ -17,24 +17,20 @@ public:
 	// Sets default values for this pawn's properties
 	ATank();
 
-/*	
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
+
+	UFUNCTION(BlueprintPure, Category = "Health")
+	float GetHealthPercent() const;
 
 private:
 
-	UPROPERTY(EditAnywhere, Category = "Setup")
-	TSubclassOf <AProjectile> ProjectileBlueprint;
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	float StartingHealth = 60;
 
-	UTankBarrel* Barrel = nullptr;
-
-	UPROPERTY(EditAnywhere, Category = "Firing")
-	float LaunchSpeed = 10000;
-
-	UPROPERTY(EditAnywhere, Category = "Firing")
-	float ReloadTimeInSeconds = 3;
-
-	double LastFireTime = 0;
-	*/
+	UPROPERTY(VisibleAnywhere, Category = "Health")
+	float CurrentHealth = StartingHealth;
+/*	
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;*/
 };

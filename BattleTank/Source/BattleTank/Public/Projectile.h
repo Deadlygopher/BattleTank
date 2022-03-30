@@ -32,7 +32,15 @@ private:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void OnTimerExpire();
+
 	UProjectileMovementComponent* ProjectileMovement = nullptr;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	float DestroyDelay = 10;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	float ProjectileDamage = 20;
 
 	UPROPERTY(EditAnywhere, Category = "Components")
 	UStaticMeshComponent* CollisionMesh = nullptr;
