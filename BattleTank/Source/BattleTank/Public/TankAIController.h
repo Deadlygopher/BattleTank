@@ -20,8 +20,14 @@ protected:
 	float AcceptanceRadius = 5000;
 	//void AimToPlayer();
 
-public:
+private:
 
 	void BeginPlay() override;
+
+	virtual void SetPawn(APawn* InPawn) override;
+
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
 };

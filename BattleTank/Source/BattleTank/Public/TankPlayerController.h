@@ -19,8 +19,8 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
 	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 	
-
 private:
+	virtual void SetPawn(APawn* InPawn) override;
 
 	//Перемещает ствол танка вместе с перекрестием прицела
 	void AimTowardsCrosshair();
@@ -39,6 +39,9 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	int LineTraceRange = 100000;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
 
 public:	
 
